@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         metadata-complete="false" version="3.0"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+
+    <!--<context-param>-->
+        <!--<param-name>webAppRootKey</param-name>-->
+        <!--<param-value>oblivion.root</param-value>-->
+    <!--</context-param>-->
+
+    <!--<context-param>-->
+        <!--<param-name>log4jConfigLocation</param-name>-->
+        <!--<param-value>classpath:log4j.xml</param-value>-->
+    <!--</context-param>-->
+    <!--<context-param>-->
+        <!--<param-name>portalExecutorCorePoolSize</param-name>-->
+        <!--<param-value>40</param-value>-->
+    <!--</context-param>-->
+
+    <!--<listener>-->
+        <!--<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>-->
+    <!--</listener>-->
+
+    <!--<listener>-->
+        <!--<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>-->
+    <!--</listener>-->
+
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+            <!--classpath:context/context-api.xml,-->
+            <!--classpath:context/context-user.xml,-->
+            <!--classpath:context/context-video.xml,-->
+            <!--classpath:context/context-mybatis.xml,-->
+            <!--classpath:context/context-redis.xml,-->
+            <!--classpath:context/context-comment.xml,-->
+            <!--classpath:context/context-emq.xml,-->
+            <!--classpath:context/context-search.xml,-->
+            <!--classpath:context/context-message.xml,-->
+            <!--classpath:context/context-author.xml,-->
+            <!--classpath:context/context-common.xml,-->
+            <!--classpath:context/context-mipush.xml,-->
+            <!--classpath:context/context-standing.xml,-->
+            <!--classpath:context/context-sensorsdata.xml,-->
+            <!--classpath:context/context-device.xml-->
+        </param-value>
+    </context-param>
+
+
+    <servlet>
+        <servlet-name>dispatcher</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/WEB-INF/dispatcher.xml</param-value>
+        </init-param>
+        <init-param>
+            <param-name>dispatchOptionsRequest</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>dispatcher</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+</web-app>

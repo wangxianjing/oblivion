@@ -1,0 +1,4 @@
+com/wong/oblivion/CglibImpl.class
+com/wong/oblivion/TestController.class
+com/wong/oblivion/LogAnnotationAspect.class
+com/wong/oblivion/CglibProxy.class
